@@ -7,18 +7,18 @@ const Team = () => {
       name: "Alejo Rivera",
       role: "Co-founder & IA Specialist",
       description: "Experto en automatización e inteligencia artificial con más de 5 años desarrollando soluciones innovadoras para empresas.",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2"
+      image: "https://i.ibb.co/DgpkTWnD/alejo.png"
     },
     {
       name: "Matías Apablaza", 
       role: "Co-founder & Tech Lead",
       description: "Especialista en integración de sistemas y desarrollo de pipelines de datos. Lidera la implementación técnica de nuestras soluciones.",
-      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=2"
+      image: "https://i.ibb.co/9Rv34FS/matias.jpg"
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="team" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-navy-900 mb-6">
