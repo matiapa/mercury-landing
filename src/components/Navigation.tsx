@@ -1,151 +1,115 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const offset = 100; // Offset para que no quede pegado a la top bar
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
       });
-      // Cerrar el menú móvil si está abierto
-      if (isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
     }
+    setIsOpen(false);
   };
+
+  const navItems = [
+    { label: 'Inicio', id: 'hero' },
+    { label: 'Qué es AndinIA', id: 'about' },
+    { label: 'Proceso', id: 'process' },
+    { label: 'Casos de Uso', id: 'use-cases' },
+    { label: 'Equipo', id: 'team' },
+    { label: 'Contacto', id: 'contact' }
+  ];
 
   return (
-    <nav className="fixed w-full bg-[#0A1F44] shadow-lg z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <span className="text-xl font-semibold text-white">Andinia</span>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/Andinia-logo-wstroke.png" 
+              alt="AndinIA Logo" 
+              className="h-10 w-auto"
+            />
+            <span className={`text-2xl font-bold transition-colors ${
+              isScrolled ? 'text-navy-900' : 'text-white'
+            }`}>
+              AndinIA
+            </span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#benefits" 
-              onClick={(e) => handleScroll(e, 'benefits')}
-              className="text-gray-200 hover:text-[#009688] transition-colors"
-            >
-              Beneficios
-            </a>
-            <a 
-              href="#process" 
-              onClick={(e) => handleScroll(e, 'process')}
-              className="text-gray-200 hover:text-[#009688] transition-colors"
-            >
-              Proceso
-            </a>
-            <a 
-              href="#cases" 
-              onClick={(e) => handleScroll(e, 'cases')}
-              className="text-gray-200 hover:text-[#009688] transition-colors"
-            >
-              Casos
-            </a>
-            <a 
-              href="#team" 
-              onClick={(e) => handleScroll(e, 'team')}
-              className="text-gray-200 hover:text-[#009688] transition-colors"
-            >
-              Equipo
-            </a>
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <a
-              href="#contact"
-              onClick={(e) => handleScroll(e, 'contact')}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#009688] hover:bg-[#00796B] transition-colors"
-            >
-              Comenzar proyecto
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-200 hover:text-[#009688] hover:bg-[#0A1F44]/80 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#009688]"
-              aria-controls="mobile-menu"
-              aria-expanded={isMobileMenuOpen}
-              onClick={toggleMobileMenu}
-            >
-              <span className="sr-only">Abrir menú</span>
-              <svg
-                className="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`font-medium transition-colors hover:text-teal-500 ${
+                  isScrolled ? 'text-gray-700' : 'text-white'
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+                {item.label}
+              </button>
+            ))}
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+            >
+              Contactar
             </button>
           </div>
-        </div>
-      </div>
 
-      {/* Mobile menu */}
-      <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#0A1F44]">
-          <a
-            href="#benefits"
-            onClick={(e) => handleScroll(e, 'benefits')}
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-[#009688] hover:bg-[#0A1F44]/80"
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+            }`}
           >
-            Beneficios
-          </a>
-          <a
-            href="#process"
-            onClick={(e) => handleScroll(e, 'process')}
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-[#009688] hover:bg-[#0A1F44]/80"
-          >
-            Proceso
-          </a>
-          <a
-            href="#cases"
-            onClick={(e) => handleScroll(e, 'cases')}
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-[#009688] hover:bg-[#0A1F44]/80"
-          >
-            Casos
-          </a>
-          <a
-            href="#team"
-            onClick={(e) => handleScroll(e, 'team')}
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-[#009688] hover:bg-[#0A1F44]/80"
-          >
-            Equipo
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => handleScroll(e, 'contact')}
-            className="block px-3 py-2 rounded-md text-base font-medium text-white bg-[#009688] hover:bg-[#00796B]"
-          >
-            Comenzar proyecto
-          </a>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 shadow-lg">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="w-full mt-4 bg-teal-500 hover:bg-teal-600 text-white py-3 px-4 rounded-lg font-semibold transition-colors"
+            >
+              Contactar
+            </button>
+          </div>
+        )}
       </div>
     </nav>
   );
 };
 
-export default Navigation; 
+export default Navigation;

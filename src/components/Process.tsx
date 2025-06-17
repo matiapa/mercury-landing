@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Cog as Cogs, Rocket } from 'lucide-react';
+import { Search, Cog, Rocket } from 'lucide-react';
 
 const Process = () => {
   const steps = [
@@ -10,7 +10,7 @@ const Process = () => {
       description: "Hacemos un diagnóstico profundo de tus procesos, clientes y casos de uso para identificar las mejores oportunidades de automatización"
     },
     {
-      icon: Cogs,
+      icon: Cog,
       number: "02", 
       title: "Automatizamos con IA",
       description: "Desarrollamos e implementamos soluciones personalizadas que se integran perfectamente con tus sistemas existentes"

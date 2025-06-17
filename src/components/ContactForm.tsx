@@ -31,7 +31,7 @@ const ContactForm = () => {
 
   if (isSubmitted) {
     return (
-      <section id="contact\" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
@@ -122,7 +122,7 @@ const ContactForm = () => {
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email corporativo *
+                    Email *
                   </label>
                   <input
                     type="email"

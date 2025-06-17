@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import Benefits from './components/Benefits';
+import About from './components/About';
 import Process from './components/Process';
 import UseCases from './components/UseCases';
 import Team from './components/Team';
@@ -13,7 +13,7 @@ function App() {
     <div className="min-h-screen bg-white font-poppins">
       <Navigation />
       <Hero />
-      <Benefits />
+      <About />
       <Process />
       <UseCases />
       <Team />

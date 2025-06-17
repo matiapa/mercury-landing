@@ -5,18 +5,18 @@ const Team = () => {
   const team = [
     {
       name: "Alejo Rivera",
-      role: "Co-founder & IA Specialist",
-      description: "Experto en automatización e inteligencia artificial con más de 5 años desarrollando soluciones innovadoras para empresas.",
-      image: "https://i.ibb.co/DgpkTWnD/alejo.png"
+      role: "Co-fundador y Especialista en Producto",
+      description: "Aporta una visión creativa y una profunda pasión por la innovación al equipo de AndinIA. Con una trayectoria que abarca desde la creación de comunidades digitales hasta la venta de productos en línea. Después de finalizada su tecnicatura hizo una especialización en desarrollo de interfaces y gestión de productos. \n Lo que lo llevó a desarrollar soluciones para diferentes emprendimientos y hacer proyectos junto a Matías. Alejo se asegura de que cada solución de IA no solo sea tecnológicamente avanzada, sino también intuitiva y centrada en las necesidades del usuario, garantizando una adopción fluida y resultados tangibles para su negocio",
+      image: "https://i.ibb.co/XrwRP63D/1706900022566.jpg"
     },
     {
       name: "Matías Apablaza", 
-      role: "Co-founder & Tech Lead",
-      description: "Especialista en integración de sistemas y desarrollo de pipelines de datos. Lidera la implementación técnica de nuestras soluciones.",
-      image: "https://i.ibb.co/9Rv34FS/matias.jpg"
+      role: "Co-fundador y Experto en IA",
+      description: "Es la fuerza técnica detrás de las soluciones de vanguardia de AndinIA. Su pasión por la tecnología y la innovación lo ha llevado a destacarse en concursos internacionales (Google Science Fair e Intel ISEF) y a especializarse en inteligencia artificial y automatización de procesos en su formación como ingeniero informático. \n Su experiencia reciente en MercadoPago, donde desarrolló agentes conversacionales que resuelven el 80% de los casos de soporte, demuestra su capacidad para implementar soluciones de IA de alto impacto que optimizan operaciones y generan valor real para las empresas.",
+      image: "https://i.ibb.co/Z6xQm661/1721315684336.jpg"
     }
   ];
-
+ {/* todo: Separar los parrafos */}
   return (
     <section id="team" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
