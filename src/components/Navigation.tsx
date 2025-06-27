@@ -30,9 +30,9 @@ const Navigation = () => {
     { label: 'Inicio', id: 'hero' },
     { label: 'Qué es AndinIA', id: 'about' },
     { label: 'Proceso', id: 'process' },
-    { label: 'Casos de Uso', id: 'use-cases' },
-    { label: 'Equipo', id: 'team' },
-    { label: 'Contacto', id: 'contact' }
+    { label: 'Productos', id: 'products' },
+    { label: 'Casos de uso', id: 'use-cases' },
+    { label: 'Equipo', id: 'team' }
   ];
 
   return (

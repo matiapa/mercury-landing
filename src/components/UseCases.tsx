@@ -28,13 +28,13 @@ const UseCases = () => {
       benefits: "Reportes en tiempo real"
     }
   ];
-
+ {/* todo: Agregar productos que son aplicables para todas las industrias */}
   return (
-    <section id="use-cases" className="py-20 bg-gradient-to-br from-navy-900 to-navy-800 text-white">
+    <section id="products" className="py-20 bg-gradient-to-br from-navy-900 to-navy-800 text-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Casos de uso que <span className="text-teal-400">funcionan</span>
+            Productos que <span className="text-teal-400">funcionan</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Soluciones probadas que están transformando empresas en Neuquén y toda la región
