@@ -39,10 +39,6 @@ const Process = () => {
           <div className="grid md:grid-cols-3 gap-12">
             {steps.map((step, index) => (
               <div key={index} className="text-center relative">
-                {/* Línea conectora */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-teal-400 to-blue-400 transform translate-x-6"></div>
-                )}
                 
                 {/* Número del paso */}
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold text-xl rounded-full mb-6 relative z-10">

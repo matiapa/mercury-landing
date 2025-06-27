@@ -16,7 +16,6 @@ const Team = () => {
       image: "https://i.ibb.co/Z6xQm661/1721315684336.jpg"
     }
   ];
- {/* todo: Separar los parrafos */}
   return (
     <section id="team" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
