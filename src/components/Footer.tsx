@@ -46,12 +46,12 @@ const Footer = () => {
                 <p>Neuquén Capital, Argentina</p>
               </div> */}
               <div className="flex items-center text-gray-300">
-                <Phone className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
-                <a href="tel:+5492996057958" className="hover:text-teal-400">+54 9 299 605-7958</a>
-              </div>
-              <div className="flex items-center text-gray-300">
                 <Mail className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
                 <a href="mailto:contacto@andinia.solutions" className="hover:text-teal-400">contacto@andinia.solutions</a>
+              </div>
+              <div className="flex items-center text-gray-300">
+                <Phone className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
+                <a href="tel:+5492996057958" className="hover:text-teal-400">+54 9 299 605-7958</a>
               </div>
             </div>
           </div>
