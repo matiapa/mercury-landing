@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+// import { MapPin, Phone, Mail } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -17,11 +18,11 @@ const Footer = () => {
               <h3 className="text-2xl font-bold">AndinIA</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Consultora de automatización e inteligencia artificial radicada en Neuquén. 
+              Consultora de automatización e inteligencia artificial. 
               Transformamos empresas con soluciones IA innovadoras y efectivas.
             </p>
             <p className="text-teal-400 font-semibold">
-              Soluciones hechas en Neuquén para el mundo
+              Soluciones hechas en Neuquén para el mundo.
             </p>
           </div>
           
@@ -33,8 +34,6 @@ const Footer = () => {
               <li>• Automatización de emails</li>
               <li>• Bases de datos consultables</li>
               <li>• Pipelines ETL de datos</li>
-              <li>• Consultoría en IA</li>
-              <li>• Integración de sistemas</li>
             </ul>
           </div>
           
@@ -42,17 +41,17 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6">Contacto</h4>
             <div className="space-y-4">
-              <div className="flex items-center text-gray-300">
+              {/* <div className="flex items-center text-gray-300">
                 <MapPin className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
                 <p>Neuquén Capital, Argentina</p>
-              </div>
+              </div> */}
               <div className="flex items-center text-gray-300">
                 <Phone className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
-                <p>+54 9 299 XXX-XXXX</p>
+                <a href="tel:+5492996057958" className="hover:text-teal-400">+54 9 299 605-7958</a>
               </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
-                <p>hola@andinia.com.ar</p>
+                <a href="mailto:contacto@andinia.solutions" className="hover:text-teal-400">contacto@andinia.solutions</a>
               </div>
             </div>
           </div>
@@ -62,9 +61,9 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8">
           <div className="text-center md:text-left md:flex md:justify-between md:items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-gray-400 text-sm">
-                Automatización Neuquén • IA Neuquén • Consultora IA Neuquén • Inteligencia Artificial Patagonia
-              </p>
+                {/* <p className="text-gray-400 text-sm">
+                  Automatización Neuquén • IA Neuquén • Consultora IA Neuquén • Inteligencia Artificial Patagonia
+                </p> */}
             </div>
             <div>
               <p className="text-gray-400 text-sm">

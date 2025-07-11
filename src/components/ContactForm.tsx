@@ -10,17 +10,32 @@ const ContactForm = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    try {
+      const response = await fetch('https://n8n.matiapa.duckdns.org/webhook/andinia-contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        setIsSubmitted(false);
+        throw new Error('Failed to submit form');
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitted(false);
+    }
     
-    // Reset después de 3 segundos
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', company: '', email: '', phone: '' });
-    }, 3000);
+      // setFormData({ name: '', company: '', email: '', phone: '' });
+    }, 10000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,9 +101,9 @@ const ContactForm = () => {
             <div className="bg-gray-50 rounded-2xl p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  {/* <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                     Tu nombre *
-                  </label>
+                  </label> */}
                   <input
                     type="text"
                     id="name"
@@ -97,14 +112,14 @@ const ContactForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="Juan Pérez"
+                    placeholder="Tu nombre"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                  {/* <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
                     Tu empresa *
-                  </label>
+                  </label> */}
                   <input
                     type="text"
                     id="company"
@@ -113,14 +128,14 @@ const ContactForm = () => {
                     value={formData.company}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="Mi Empresa SRL"
+                    placeholder="Tu empresa"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  {/* <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                     Teléfono *
-                  </label>
+                  </label> */}
                   <input
                     type="tel"
                     id="phone"
@@ -129,14 +144,14 @@ const ContactForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="2995556677"
+                    placeholder="Tu teléfono"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  {/* <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                     Email *
-                  </label>
+                  </label> */}
                   <input
                     type="email"
                     id="email"
@@ -145,7 +160,7 @@ const ContactForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="juan@miempresa.com"
+                    placeholder="Tu email"
                   />
                 </div>
                 
@@ -157,9 +172,9 @@ const ContactForm = () => {
                   <span>Agendá tu reunión gratuita</span>
                 </button>
                 
-                <p className="text-xs text-gray-500 text-center">
+                {/* <p className="text-xs text-gray-500 text-center">
                   Te llamará nuestra agente de IA para coordinar un turno 😉
-                </p>
+                </p> */}
               </form>
             </div>
           </div>

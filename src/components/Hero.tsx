@@ -60,11 +60,14 @@ const Hero = () => {
             Agendá tu llamada gratuita
             <ArrowRight className="h-6 w-6" />
           </button>
+
+          
           
           {/* Indicador local */}
-          <p className="mt-6 text-sm text-gray-300">
+          {/* // TODO: Add this back when we have go specific for Neuquén */}
+          {/* <p className="mt-6 text-sm text-gray-300">
             ✨ Soluciones hechas en Neuquén para empresas neuquinas
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
