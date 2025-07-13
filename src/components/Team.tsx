@@ -30,8 +30,8 @@ const Team = () => {
       name: "Matías Apablaza", 
       role: "Ingeniero Informático y Experto en Inteligencia Artificial",
       description: "Es la fuerza técnica detrás de las soluciones de vanguardia de AndinIA. Su pasión por la tecnología y la innovación lo ha llevado a destacarse en concursos internacionales (Google Science Fair e Intel ISEF) y a especializarse en inteligencia artificial y automatización de procesos en su formación como ingeniero informático. \n Su experiencia reciente en MercadoPago, donde desarrolló agentes conversacionales que resuelven el 80% de los casos de soporte, demuestra su capacidad para implementar soluciones de IA de alto impacto que optimizan operaciones y generan valor real para las empresas.",
-      image: " https://i.ibb.co/zhYztDRj/Mati-2.jpg",
-      imagePadding: 8, // configurable padding for each photo
+      image: "https://i.ibb.co/tTqpGJyF/Mati-3.jpg",
+      imagePadding: 0, // configurable padding for each photo
       imageOffsetX: 0,
       imageOffsetY: 0,
       linkedin: "https://www.linkedin.com/in/matiasapablaza/",
