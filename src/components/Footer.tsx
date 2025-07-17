@@ -47,7 +47,7 @@ const Footer = () => {
               </div> */}
               <div className="flex items-center text-gray-300">
                 <Mail className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />
-                <a href="mailto:contacto@andinia.solutions" className="hover:text-teal-400">contacto@andinia.solutions</a>
+                <a href="mailto:team@andinia.solutions" className="hover:text-teal-400">contacto@andinia.solutions</a>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="h-5 w-5 text-teal-400 mr-3 flex-shrink-0" />

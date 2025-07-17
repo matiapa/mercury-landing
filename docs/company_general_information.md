@@ -81,7 +81,7 @@ AndinIA offers a **free consultation call** where potential clients can obtain:
 ### Contact Methods
 - **Primary**: Contact form on website
 - **Phone**: +54 9 299 605-7958
-- **Email**: contacto@andinia.solutions
+- **Email**: team@andinia.solutions
 
 ### Target Audience
 - Small to medium businesses in Neuquén and Argentina
