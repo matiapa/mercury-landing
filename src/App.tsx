@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,10 +9,11 @@ import IndustryUseCases from './components/IndustryUseCases';
 import Team from './components/Team';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import Links from './components/Links';
 
-function App() {
+function LandingPage() {
   return (
-    <div className="min-h-screen bg-white font-poppins">
+    <>
       <Navigation />
       <Hero />
       <About />
@@ -21,7 +23,20 @@ function App() {
       <Team />
       <ContactForm />
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-white font-poppins">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/links" element={<Links />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
