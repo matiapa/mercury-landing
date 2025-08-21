@@ -5,7 +5,7 @@ const Links = () => {
   const links = [
     {
       title: 'Llamá a nuestro agente de IA',
-      subtitle: 'Conversá con nuestra IA especializada',
+      subtitle: 'Conversá con nuestra IA especializada y agendá una reunión con Andinia',
       icon: <Phone className="h-6 w-6" />,
       href: 'tel:+541152180904',
       color: 'bg-teal-500 hover:bg-teal-600',
